@@ -12,6 +12,11 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
+        'assetManager' => [
+            'bundles' => [
+                'yii\web\YiiAsset' => false,
+            ],
+        ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
             'baseUrl' => ''

@@ -12,12 +12,42 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
     ];
     public $js = [
     ];
     public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap5\BootstrapAsset',
+        //'yii\web\YiiAsset',
+        //'yii\bootstrap5\BootstrapAsset',
     ];
+
+    /**
+     *
+     */
+    public function init()
+    {
+        $this->css = static::getCss();
+        $this->js = static::getJs();
+
+        return parent::init();
+    }
+
+    /**
+     * @return array
+     */
+    private static function getCss()
+    {
+        return [
+
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    private static function getJs()
+    {
+        return [
+
+        ];
+    }
 }
