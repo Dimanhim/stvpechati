@@ -46,6 +46,9 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '/ecp' => 'site/ecp',
+                '/registration' => 'site/registration',
+                '/politics' => 'site/politics',
             ],
         ],
     ],

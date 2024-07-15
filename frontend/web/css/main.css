@@ -1,6 +1,6 @@
 /* Generated on: Tue Sep 08 2020 18:13:34 GMT+0000 (Coordinated Universal Time) */
 /* ==========================================================================
-   normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css 
+   normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
    ========================================================================== */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:none}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 
@@ -13,7 +13,7 @@
    Start of custom Webflow CSS
    ========================================================================== */
 body {
-  background-image: url("../images/58187f7ba49bac756d8e6afa_pattern.jpg");
+  background-image: url("/img/58187f7ba49bac756d8e6afa_pattern.jpg");
   background-position: 0px 0px;
   background-size: 157px;
   font-family: 'Open Sans', sans-serif;
@@ -284,7 +284,7 @@ li {
   padding-top: 0px;
   padding-bottom: 0px;
   float: none;
-  background-image: url("../images/5818861b322f605c244790bb_depositphotos_1-1-u16658-fr.jpg");
+  background-image: url("/img/5818861b322f605c244790bb_depositphotos_1-1-u16658-fr.jpg");
   background-position: 50% 0px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -313,7 +313,7 @@ li {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   background-color: #ed1c24;
-  background-image: url("../images/58188878464a966924f23144_emoticon120.png");
+  background-image: url("/img/58188878464a966924f23144_emoticon120.png");
   background-position: 72px 50%;
   background-size: 32px;
   background-repeat: no-repeat;
@@ -877,7 +877,7 @@ li {
   margin: 20px auto 36px;
   padding-bottom: 20px;
   border: 2px solid #e0e0e0;
-  background-image: url("../images/581995dda4bfa69a4dedc671_quality_stamp-u31240.png");
+  background-image: url("/img/581995dda4bfa69a4dedc671_quality_stamp-u31240.png");
   background-position: 11px 30px;
   background-size: 160px;
   background-repeat: no-repeat;
@@ -1213,7 +1213,7 @@ li {
 .footer {
   padding-top: 25px;
   padding-bottom: 25px;
-  background-image: url("../images/581a1280a4bfa69a4def621a_12e13457-u149305-fr.png");
+  background-image: url("/img/581a1280a4bfa69a4def621a_12e13457-u149305-fr.png");
   background-position: 0px 0px;
   background-size: 150px;
 }
@@ -1237,7 +1237,7 @@ li {
   margin-left: auto;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-image: url("../images/581a13bfa80ffea74d8c028c_viber-u164721.png"), url("../images/581a13a0a4bfa69a4def66b1_whatsapp2-u164713.png");
+  background-image: url("/img/581a13bfa80ffea74d8c028c_viber-u164721.png"), url("/img/581a13a0a4bfa69a4def66b1_whatsapp2-u164713.png");
   background-position: 39px 50%, 0px 50%;
   background-size: 30px, 30px;
   background-repeat: no-repeat, no-repeat;
@@ -1253,7 +1253,7 @@ li {
   margin-left: auto;
   padding-top: 7px;
   padding-bottom: 7px;
-  background-image: url("../images/581a1474d2a44a8119f4d623_mail59-u1493552.png");
+  background-image: url("/img/581a1474d2a44a8119f4d623_mail59-u1493552.png");
   background-position: 0px 50%;
   background-size: 27px;
   background-repeat: no-repeat;
@@ -1392,7 +1392,7 @@ li {
   border: 2px solid #5656e3;
   border-radius: 10px;
   background-color: hsla(0, 0%, 100%, 0.9);
-  background-image: url("../images/581b815d8869e2962e137cdd_up-arrow-key.png");
+  background-image: url("/img/581b815d8869e2962e137cdd_up-arrow-key.png");
   background-position: 50% 50%;
   background-size: 24px;
   background-repeat: no-repeat;
@@ -1629,7 +1629,7 @@ li {
 .osnast-img1 {
   width: 300px;
   height: 300px;
-  background-image: url("../images/58189968322f605c2447bcc7_gerb.jpg");
+  background-image: url("/img/58189968322f605c2447bcc7_gerb.jpg");
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1639,7 +1639,7 @@ li {
 .osnast-img2 {
   width: 300px;
   height: 300px;
-  background-image: url("../images/5d9f5a4918120f02172a5b25_1.jpg");
+  background-image: url("/img/5d9f5a4918120f02172a5b25_1.jpg");
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1650,7 +1650,7 @@ li {
   width: 300px;
   height: 300px;
   background-color: #fff;
-  background-image: url("../images/5d9f5a9149b540a64a5569ba_2.jpg");
+  background-image: url("/img/5d9f5a9149b540a64a5569ba_2.jpg");
   background-position: 50% 50%;
   background-size: 260px;
   background-repeat: no-repeat;
@@ -1702,7 +1702,7 @@ li {
   height: 270px;
   margin-right: auto;
   margin-left: auto;
-  background-image: url("../images/58189f2f9eb8a8b642e7b33f_faximile.jpg");
+  background-image: url("/img/58189f2f9eb8a8b642e7b33f_faximile.jpg");
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2080,8 +2080,8 @@ li {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(hsla(0, 0%, 100%, 0.39)), to(hsla(0, 0%, 100%, 0.39))), url("../images/5f4fb4014e28da5234f79ca8_fon-regIP.jpg");
-  background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0.39), hsla(0, 0%, 100%, 0.39)), url("../images/5f4fb4014e28da5234f79ca8_fon-regIP.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(hsla(0, 0%, 100%, 0.39)), to(hsla(0, 0%, 100%, 0.39))), url("/img/5f4fb4014e28da5234f79ca8_fon-regIP.jpg");
+  background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0.39), hsla(0, 0%, 100%, 0.39)), url("/img/5f4fb4014e28da5234f79ca8_fon-regIP.jpg");
   background-position: 0px 0px, 50% 50%;
   background-size: auto, cover;
 }
