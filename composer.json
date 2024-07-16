@@ -29,7 +29,8 @@
         "kartik-v/yii2-widget-select2": "^2.2",
         "vova07/yii2-select2-widget": "^0.1.2",
         "cleantalk/php-antispam": "dev-master",
-        "vlucas/phpdotenv": "dev-master"
+        "vlucas/phpdotenv": "dev-master",
+        "yiisoft/yii2-bootstrap4": "^2.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

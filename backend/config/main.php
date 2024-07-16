@@ -8,10 +8,20 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
+    'name' => 'Trafaret',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+        'gii' => [
+            'class' => 'yii\gii\Module',
+            'allowedIPs' => ['*'],
+        ],
+        'debug' => [
+            'class' => 'yii\debug\Module',
+            'allowedIPs' => ['*'],
+        ]
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
@@ -46,4 +56,5 @@ return [
         ],
     ],
     'params' => $params,
+    'defaultRoute' => 'product/index'
 ];
