@@ -1,4 +1,3 @@
-const common = (function() {
 
     function init() {
         bind();
@@ -48,14 +47,6 @@ const common = (function() {
         $(".phone-mask").inputmask({"mask": "+7 (999) 999-99-99"});
     }
 
-    return {
-        init: function() {
-            init()
-        }
-    }
-
-})()
-common.init()
 
 
 

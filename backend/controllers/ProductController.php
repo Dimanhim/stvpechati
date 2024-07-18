@@ -22,12 +22,6 @@ class ProductController extends BaseController
             parent::behaviors(),
             [
                 'className' => Product::className(),
-                'verbs' => [
-                    'class' => VerbFilter::className(),
-                    'actions' => [
-                        'delete' => ['POST'],
-                    ],
-                ],
             ]
         );
     }

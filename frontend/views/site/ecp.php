@@ -43,97 +43,53 @@ $this->title = 'Электронная подпись (ЭЦП)';
         <p>Участие в торгах, работа на госпорталах, декларирование информации, бухгалтерская отчетность и получение
             государственных услуг</p>
     </div>
+    <?php if($products and count($products) >= 2 ) : ?>
     <div class="ecp-wrapper">
         <div class="div-block-6">
-            <div class="ecp-item">
-                <div>
-                    <div class="ecp-header">
-                        Электронная подпись для регистрации ИП/ООО
+            <?php for($i = 0; $i < 2; $i++) : ?>
+                <div class="ecp-item">
+                    <div>
+                        <div class="ecp-header">
+                            <?= $products[$i]->name ?>
+                        </div>
+                        <div class="txt ecp w-richtext">
+                            <?= $products[$i]->description ?>
+                        </div>
                     </div>
-                    <div class="txt ecp w-richtext">
-                        <p>Регистрация ИП/ООО на портале Госуслуг (<a href="http://www.gosuslugi.ru/" target="_blank"
-                                                                      rel="nofollow noopener">www.gosuslugi.ru</a>) :
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <div class="price ecpt">
-                        900 руб
-                    </div>
-                    <div data-show-lbox="lbox-kup" data-product="ЭЦП для ИП/ООО" data-ix="open-lbox"
-                         class="form-button-copy orange-butt ecp">заказать
-                    </div>
-                </div>
-            </div>
-            <div class="ecp-item">
-                <div>
-                    <div class="ecp-header">
-                        Электронная подпись для Федеральных ЭТП ( ФЭТП ) + КЭП
-                    </div>
-                    <div class="txt ecp w-richtext">
-                        <ul>
-                            <li>Все возможности квалифицированной электронной подписи ( КЭП )</li>
-                        </ul>
-                        <p>Доступ к восьми гос . площадкам :</p>
-                        <ul>
-                            <li>PTC &#8212; TEHAEP ( www.rts-tender.ru )</li>
-                            <li>Сбербанк &#8212; ACT ( www.sberbank-ast.ru )</li>
-                            <li>AO ESTA ( www.roseltorg.ru )</li>
-                            <li>АО &#187; Электронные Торговые Системы &#187; ( www.etp-ets.ru )</li>
-                            <li>АГЗ РТ ( www.zakazrf.ru )</li>
-                            <li>AO PAA ( www.lot-online.ru )</li>
-                        </ul>
+                    <div>
+                        <div class="price ecpt">
+                            <?= $products[$i]->price ?> руб
+                        </div>
+                        <div data-show-lbox="lbox-kup" data-product="<?= $products[$i]->short_name ?>" data-ix="open-lbox"
+                             class="form-button-copy orange-butt ecp">заказать
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div class="price ecpt">
-                        3000 руб
-                    </div>
-                    <div data-show-lbox="lbox-kup" data-product="Заказать ЭЦП для ФЭТП" data-ix="open-lbox"
-                         class="form-button-copy orange-butt ecp">заказать
-                    </div>
-                </div>
-            </div>
+            <?php endfor; ?>
         </div>
+        <?php if(isset($products[2])) : ?>
         <div class="ecp-item wide">
+
             <div>
                 <div class="ecp-header">
-                    Квалифицированная электронная подпись (КЭП)
+                    <?= $products[2]->name ?>
                 </div>
                 <div class="txt ecp w-richtext">
-                    <ul>
-                        <li>Работа на портале ФНС:<br/>
-                            Сдача на отчетности через интернет, проверка задолженности, внесение изменений в реквизиты в
-                            юр.лица и многое другое.
-                        </li>
-                        <li>Участие в торгах по 223-ФЗ в качестве заказчика.</li>
-                        <li>Участие в торгах по 223-ФЗ в качестве поставщика (все площадки, принимающие КЭП без
-                            дополнительных ОИДов)
-                        </li>
-                        <li>Участие в коммерческих торгах по банкротству (все площадки, принимающие КЭП без
-                            дополнительных ОИДов)
-                        </li>
-                        <li>Электронный документооборот</li>
-                        <li>Регистрация онлайн кассы</li>
-                        <li>Все возможности портала Госуслуг (www.gosuslugi.ru);</li>
-                        <li>ЭП для портала Росимущества, Таможня, ЕГАИС Мех, ЕГАИС Лес, ГИС ЖКХ, Росминздрава, ЭП для
-                            врача (подписание больничных листов), Росаккредитация, ЦентрБанк, Росфинмониторинг, для
-                            регистрации ФГИС Меркурий, маркировка лекарств
-                        </li>
-                        <li>ЭП для ЕИС</li>
-                    </ul>
+                    <?= $products[2]->description ?>
                 </div>
             </div>
             <div>
                 <div class="price ecpt">
-                    2000 руб
+                    <?= $products[2]->price ?> руб
                 </div>
-                <div data-show-lbox="lbox-kup" data-product="Заказать КЭП" data-ix="open-lbox"
+                <div data-show-lbox="lbox-kup" data-product="<?= $products[2]->short_name ?>" data-ix="open-lbox"
                      class="form-button-copy orange-butt ecp">заказать
                 </div>
             </div>
         </div>
+        <?php endif; ?>
     </div>
+    <?php endif; ?>
     <div class="dubl-text ecp w-richtext">
         <h2>Почему стоит выбрать компанию Печать и подпись?</h2>
         <p><strong>*Удаленный заказ</strong></p>

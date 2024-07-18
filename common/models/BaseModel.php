@@ -426,6 +426,14 @@ class BaseModel extends ActiveRecord
         return $this->update();
     }
 
+    public function getImagePath()
+    {
+        if($mainImage = $this->mainImage) {
+            return '/upload' . $mainImage->path;
+        }
+        return false;
+    }
+
 
 
 

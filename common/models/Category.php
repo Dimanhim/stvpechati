@@ -71,4 +71,28 @@ class Category extends BaseModel
     {
         return $this->hasOne(Category::className(), ['id' => 'parent_id']);
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProducts()
+    {
+        return $this->hasMany(Product::className(), ['category_id' => 'id'])->andWhere(['is_active' => 1, 'deleted' => null])->orderBy(['position' => SORT_ASC]);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getStamps()
+    {
+        return $this->hasMany(Product::className(), ['category_id' => 'id'])->andWhere(['type_id' => Product::TYPE_STAMP, 'is_active' => 1, 'deleted' => null])->orderBy(['position' => SORT_ASC]);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSignatures()
+    {
+        return $this->hasMany(Product::className(), ['category_id' => 'id'])->andWhere(['type_id' => Product::TYPE_SIGNATURE, 'is_active' => 1, 'deleted' => null])->orderBy(['position' => SORT_ASC]);
+    }
 }

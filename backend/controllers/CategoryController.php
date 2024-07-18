@@ -22,12 +22,6 @@ class CategoryController extends BaseController
             parent::behaviors(),
             [
                 'className' => Category::className(),
-                'verbs' => [
-                    'class' => VerbFilter::className(),
-                    'actions' => [
-                        'delete' => ['POST'],
-                    ],
-                ],
             ]
         );
     }

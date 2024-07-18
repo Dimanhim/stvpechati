@@ -2,6 +2,8 @@
 
 namespace frontend\controllers;
 
+use common\models\Category;
+use common\models\Product;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -44,12 +46,20 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('home');
+        $categories = Category::findModels()->all();
+
+        return $this->render('home', [
+            'categories' => $categories,
+        ]);
     }
 
     public function actionEcp()
     {
-        return $this->render('ecp');
+        $products = Product::findModels()->andWhere(['type_id' => Product::TYPE_SIGNATURE])->all();
+
+        return $this->render('ecp', [
+            'products' => $products,
+        ]);
     }
 
     public function actionPolitics()

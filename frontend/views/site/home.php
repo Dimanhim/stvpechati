@@ -122,489 +122,137 @@ $this->title = 'ИЗГОТОВЛЕНИЕ ПЕЧАТЕЙ, ШТАМПОВ, ФАК�
 </div>
 <div id="price" class="production">
     <h2 class="h2">
-        наша продукция </h2>
+        наша продукция
+    </h2>
     <div class="klishe">
         В цену включено изготовление клише!
     </div>
-    <div class="tovars">
-        <div class="tovar-cat">
-            <div class="text-block-6">
-                Автоматические печати
-            </div>
-            <div class="prod-block">
-                <div class="product">
-                    <div class="img-wrap">
-                        <img src="/img/ideal.jpg" alt="" class="prod-img" title="идеал"></div>
-                    <div class="stamp-name">
-                        Модель "Идеал"
-                    </div>
-                    <div data-delay="0" data-hover="" class="more w-dropdown">
-                        <div class="more-toogle w-dropdown-toggle">
-                            <div class="more-txt">подробнее</div>
-                        </div>
-                        <nav class="more-block w-dropdown-list">
-                            <div class="more-desc">
-                                Казалось бы – что может быть проще – взять и поменять подушку у печати – но и здесь
-                                IDEAL заботится о качестве оттиска и чистоте Ваших пальцев при смене подушки. Вторым
-                                новшеством, которое доступно в новой оснастке четвертого поколения 46042 является
-                                появления специальной крышки, благодаря которой теперь вы можете носить с собой печать в
-                                сложенном состоянии.
-                            </div>
-                        </nav>
-                    </div>
-                    <div class="price">
-                        1000
-                    </div>
-                    <div data-show-lbox="lbox-kup" data-product="Модель Идеал" data-ix="open-lbox" class="form-button orange-butt fix">
-                        заказать сейчас!
-                    </div>
-            </div>
-            <div class="product">
-                <div class="img-wrap">
-                    <img src="/img/kolopr40.jpg" alt="" class="prod-img" title="колопр40"></div>
-                <div class="stamp-name">
-                    Модель "Колоп"
-                </div>
-                <div data-delay="0" data-hover="" class="more w-dropdown">
-                    <div class="more-toogle w-dropdown-toggle">
-                        <div class="more-txt">подробнее</div>
-                    </div>
-                    <nav class="more-block w-dropdown-list">
-                        <div class="more-desc">
-                            Эта модель печати австрийской марки Colop славится своим отличным качеством оттиска. Удобный
-                            в использовании автоматический механизм и плавный бесшумный ход печати не оставит Вас
-                            равнодушным при пользовании этой модели
 
+    <?php if($categories) : ?>
+        <div class="tovars">
+            <?php foreach($categories as $category) : ?>
+            <div class="tovar-cat">
+                <div class="text-block-6">
+                    <?= $category->name ?>
+                </div>
+                <?php if($productStamps = $category->stamps) : ?>
+                <div class="prod-block">
+                    <?php foreach($productStamps as $productStamp) : ?>
+                    <div class="product">
+                        <div class="img-wrap">
+                            <img src="<?= $productStamp->imagePath ?>" alt="<?= $productStamp->name ?>" class="prod-img" title="<?= $productStamp->name ?>">
                         </div>
-                    </nav>
+                        <div class="stamp-name">
+                            <?= $productStamp->name ?>
+                        </div>
+                        <div data-delay="0" data-hover="" class="more w-dropdown">
+                            <div class="more-toogle w-dropdown-toggle">
+                                <div class="more-txt">подробнее</div>
+                            </div>
+                            <nav class="more-block w-dropdown-list">
+                                <div class="more-desc">
+                                    <?= strip_tags($productStamp->description) ?>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="price">
+                            <?= $productStamp->price ?>
+                        </div>
+                        <div data-show-lbox="lbox-kup" data-product="<?= $productStamp->short_name ?>" data-ix="open-lbox" class="form-button orange-butt fix">
+                            заказать сейчас!
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
                 </div>
-                <div class="price">
-                    1100
-                </div>
-                <div data-show-lbox="lbox-kup" data-product="Модель Колоп" data-ix="open-lbox" class="form-button orange-butt fix">
-                    заказать сейчас!
-                </div>
+                <?php endif; ?>
+            </div>
+            <?php endforeach; ?>
         </div>
+    <?php endif; ?>
+
+    <div class="prod-block h">
         <div class="product">
             <div class="img-wrap">
-                <img src="/img/avtomaticheskaya-pechat.png" alt="" class="prod-img" title="автоматическая печать"></div>
-            <div class="stamp-name">
-                Модель "Trodat"
-            </div>
-            <div data-delay="0" data-hover="" class="more w-dropdown">
+                <img src="/img/58189db8322f605c2447c5de_brelok.jpg" alt="" class="prod-img"></div>
+            <div class="stamp-name">Печать <br>"Карина"</div>
+            <div data-delay="0" data-hover="1" class="more w-dropdown">
                 <div class="more-toogle w-dropdown-toggle">
                     <div class="more-txt">подробнее</div>
                 </div>
                 <nav class="more-block w-dropdown-list">
-                    <div class="more-desc">
-                        Оснастка для печати 40 мм. Наличие крышки позволяет переносить оснастку в сложенном виде.
-                        Интуитивно простая смена подушки, при которой пальцы всегда останутся чистыми. Долговечность,
-                        благодаря металлической втулке.
+                    <div class="more-desc">Приятная на ощупь металлическая оснастка. Удобна при ношении в кармане. Перед
+                        использованием требует промакивания в штемпельную подушку.
                     </div>
                 </nav>
             </div>
-            <div class="price">
-                1100
-            </div>
-            <div data-show-lbox="lbox-kup" data-product="Модель Trodat" data-ix="open-lbox" class="form-button orange-butt fix">
-                заказать сейчас!
-            </div>
-    </div>
-</div>
-</div>
-<div class="tovar-cat">
-    <div class="text-block-6">
-        Ручные и полуавтоматические (карманные) печати
-    </div>
-    <div class="prod-block">
-        <div class="product">
-            <div class="img-wrap">
-                <img src="/img/xxxl-1.jpg" alt="" class="prod-img" title="XXXL (1)"></div>
-            <div class="stamp-name">
-                Ручные печати 'Пешка/Шайба'
-            </div>
-            <div data-delay="0" data-hover="" class="more w-dropdown">
-                <div class="more-toogle w-dropdown-toggle">
-                    <div class="more-txt">подробнее</div>
-                </div>
-                <nav class="more-block w-dropdown-list">
-                    <div class="more-desc">
-                        Стандартная ручная пластиковая печать. Требует обмакивания в штемпельную подушку перед
-                        использованием.
-                    </div>
-                </nav>
-            </div>
-            <div class="price">
-                700 руб.
-            </div>
-            <div data-show-lbox="lbox-kup" data-product="Ручные печати 'Пешка/Шайба'" data-ix="open-lbox" class="form-button orange-butt fix">
+            <div class="price">800 руб</div>
+            <div data-show-lbox="lbox-kup" data-product="Металлическая Брелок" data-ix="open-lbox" class="form-button orange-butt">
                 заказать сейчас!
             </div>
         </div>
         <div class="product">
             <div class="img-wrap">
-                <img src="/img/5d9f61a0abdfec4f555efe05_peshka.jpg" alt="" class="prod-img" title="">
+                <img src="/img/58189db8322f605c2447c5dd_evro1.jpg" alt="" class="prod-img">
             </div>
-            <div class="stamp-name">
-                Полуавтоматические печати 'Пешка/Шайба'
-            </div>
-            <div data-delay="0" data-hover="" class="more w-dropdown">
+            <div class="stamp-name">Печать <br>"Евро-1"</div>
+            <div data-delay="0" data-hover="1" class="more w-dropdown">
                 <div class="more-toogle w-dropdown-toggle">
                     <div class="more-txt">подробнее</div>
                 </div>
                 <nav class="more-block w-dropdown-list">
-                    <div class="more-desc">
-                        Полуавтоматические печати отличаются от ручных наличием встроенных в откручивающиеся крышки
-                        штемпельных подушках. Перед использованием достаточно один раз нажать на кнопку сверху, снять
-                        крышку и поставить печать на бумаге. Очень удобна для тех кто часто берет печать с собой, можно
-                        смело положить в карман без опасений запачкаться
+                    <div class="more-desc">Печать с удобной рукояткой и встроенной кнопкой. Внутри имеется штемпельная
+                        подушка. Качественное гальваническое покрытие.
                     </div>
                 </nav>
             </div>
-            <div class="price">
-                800 руб.
-            </div>
-            <div data-show-lbox="lbox-kup" data-product="Полуавтоматические печати 'Пешка/Шайба'" data-ix="open-lbox"
-                 class="form-button orange-butt fix">заказать сейчас!
-            </div>
-        </div>
-        <div class="product">
-            <div class="img-wrap">
-                <img src="/img/77871.970.jpg" alt="" class="prod-img" title=""></div>
-            <div class="stamp-name">
-                Карманная печать 'Австрия'
-            </div>
-            <div data-delay="0" data-hover="" class="more w-dropdown">
-                <div class="more-toogle w-dropdown-toggle">
-                    <div class="more-txt">подробнее</div>
-                </div>
-                <nav class="more-block w-dropdown-list">
-                    <div class="more-desc">
-                        Одна из самых удобных карманных печатей. Оригинальное исполнение позволяет носить с собой в
-                        кармане без опасений залить карман краской. Удобные кнопочки по бокам позволяют без труда
-                        открыть печать для использования.
-                    </div>
-                </nav>
-            </div>
-            <div class="price">
-                1000 руб.
-            </div>
-            <div data-show-lbox="lbox-kup" data-product="Карманная печать 'Австрия'" data-ix="open-lbox" class="form-button orange-butt fix">
+            <div class="price">1200 руб</div>
+            <div data-show-lbox="lbox-kup" data-product="Металлическая Евро-1" data-ix="open-lbox" class="form-button orange-butt">
                 заказать сейчас!
             </div>
         </div>
         <div class="product">
             <div class="img-wrap">
-                <img src="/img/colop-pocket.jpg" alt="" class="prod-img" title=""></div>
-            <div class="stamp-name">
-                Карманная печать 'Люкс'
+                <img src="/img/58189db8e8bbf0826d961d74_evro2.jpg" alt="" class="prod-img">
             </div>
-            <div data-delay="0" data-hover="" class="more w-dropdown">
+            <div class="stamp-name">Печать <br>"Евро-2"</div>
+            <div data-delay="0" data-hover="1" class="more w-dropdown">
                 <div class="more-toogle w-dropdown-toggle">
                     <div class="more-txt">подробнее</div>
                 </div>
                 <nav class="more-block w-dropdown-list">
-                    <div class="more-desc">
-                        Очень удобный дорожный вариант печати. Форма флешки позволяет носить в кармане эту печать
-                        комфортно, практически не чувствуя ее, а надежное австрийское качество позволит ей служить Вам
-                        долгие годы.
+                    <div class="more-desc">Эксклюзивная металлическая печать со встроенной подушкой внутри. Как и у всех
+                        полуавтоматов достаточно лишь перед использованием один раз нажать на кнопку сверху, снять крышку и
+                        поставить печать на бумаге. Изготавливается из сплавов цветных металлов с высококачественными
+                        гальваническими покрытиями и отличается высочайшим качеством. Радости от пользования этой печатью
+                        будет не меньше, чем от присоединения Крыма к России
                     </div>
                 </nav>
             </div>
-            <div class="price">
-                1300 руб.
-            </div>
-            <div data-show-lbox="lbox-kup" data-product="Карманная печать 'Люкс'" data-ix="open-lbox" class="form-button orange-butt fix">
-                заказать сейчас!
-            </div>
-        </div>
-    </div>
-</div>
-<div class="tovar-cat">
-    <div class="text-block-6">
-        Металлические печати
-    </div>
-    <div class="prod-block">
-        <div class="product">
-            <div class="img-wrap">
-                <img src="/img/kraskonapolnennaya_flesh_pechat.jpg" alt="" class="prod-img" title="">
-            </div>
-            <div class="stamp-name">
-                Флеш-печать
-            </div>
-            <div data-delay="0" data-hover="" class="more w-dropdown">
-                <div class="more-toogle w-dropdown-toggle">
-                    <div class="more-txt">подробнее</div>
-                </div>
-                <nav class="more-block w-dropdown-list">
-                    <div class="more-desc">
-                        Флеш-печать - это красконаполненная печать, краска находится в самой печати. Печать устроена
-                        таким образом, что материал из которого она изготовлена похож по структуре на резиновую губку и
-                        пропитан специальной краской на масляной основе. Макать в специальную губку печать не нужно.
-                    </div>
-                </nav>
-            </div>
-            <div class="price">
-                1500
-            </div>
-            <div data-show-lbox="lbox-kup" data-product="Флеш-печать" data-ix="open-lbox" class="form-button orange-butt fix">
+            <div class="price">1300 руб</div>
+            <div data-show-lbox="lbox-kup" data-product="Металлическая Евро-2" data-ix="open-lbox" class="form-button orange-butt">
                 заказать сейчас!
             </div>
         </div>
         <div class="product">
             <div class="img-wrap">
-                <img src="/img/3___.jpg" alt="" class="prod-img"title="www.pechatonline.ru">
-            </div>
-            <div class="stamp-name">
-                Печать "Евро"
-            </div>
-            <div data-delay="0" data-hover="" class="more w-dropdown">
+                <img src="/img/58189db8a49bac756d8ea873_etalon.jpg" alt="" class="prod-img"></div>
+            <div class="stamp-name">Печать <br>Автомат "Эталон"</div>
+            <div data-delay="0" data-hover="1" class="more w-dropdown">
                 <div class="more-toogle w-dropdown-toggle">
                     <div class="more-txt">подробнее</div>
                 </div>
                 <nav class="more-block w-dropdown-list">
-                    <div class="more-desc">
-                        Эксклюзивная металлическая печать со встроенной подушкой внутри. Как и у всех полуавтоматов
-                        достаточно лишь перед использованием один раз нажать на кнопку сверху, снять крышку и поставить
-                        печать на бумаге. Изготавливается из сплавов цветных металлов с высококачественными
-                        гальваническими покрытиями и отличается высочайшим качеством. Радости от пользования этой
-                        печатью будет не меньше, чем от присоединения Крыма к России
+                    <div class="more-desc">Полностью металлическая оснастка идеально подходит для «конвейерного» и
+                        беспрерывного штампования документов. «Неубиваемая» оснастка в любых руках.
                     </div>
                 </nav>
             </div>
-            <div class="price">
-                1700
-            </div>
-            <div data-show-lbox="lbox-kup" data-product="Печать Евро" data-ix="open-lbox" class="form-button orange-butt fix">
-                заказать сейчас!
-            </div>
-        </div>
-        <div class="product">
-            <div class="img-wrap">
-                <img src="/img/5edb7f7633ff4cde9e0b9cfc1cd15fa3_xl.jpg" alt="" class="prod-img" title="">
-            </div>
-            <div class="stamp-name">
-                Автоматическая печать "Специалист"
-            </div>
-            <div data-delay="0" data-hover="" class="more w-dropdown">
-                <div class="more-toogle w-dropdown-toggle">
-                    <div class="more-txt">подробнее</div>
-                </div>
-                <nav class="more-block w-dropdown-list">
-                    <div class="more-desc">
-                        Металлический корпус c автоматическим возвратным механизмом. Печать предназначена для долговечной
-                        работы в интенсивном режиме. Ведущий механизм гарантирует качественный и равномерный оттиск печати,
-                        при этом обеспечивает мягкость и бесшумность хода.
-                    </div>
-                </nav>
-            </div>
-            <div class="price">
-                2200
-            </div>
-            <div data-show-lbox="lbox-kup" data-product="Автоматическая печать Специалист" data-ix="open-lbox" class="form-button orange-butt fix">
-                заказать сейчас!
-            </div>
-        </div>
-        <div class="product">
-            <div class="img-wrap">
-                <img src="/img/6012445568.jpg" alt="" class="prod-img" title="">
-            </div>
-            <div class="stamp-name">
-                Автоматическая печать "Профессионал"
-            </div>
-            <div data-delay="0" data-hover="" class="more w-dropdown">
-                <div class="more-toogle w-dropdown-toggle">
-                    <div class="more-txt">подробнее</div>
-                </div>
-                <nav class="more-block w-dropdown-list">
-                    <div class="more-desc">
-                        Прочный корпус из нержавеющей стали, автоматическое окрашивание. Идеальное качество оттиска достигается
-                        благодаря улучшенному подушечному материалу. Легкая и бесшумная в работе Предназначена для работы с
-                        повышенной нагрузкой и максимальным количеством проставляемых оттисков
-                    </div>
-                </nav>
-            </div>
-            <div class="price">
-                2400
-            </div>
-            <div data-show-lbox="lbox-kup" data-product="Автоматическая печать Профессионал" data-ix="open-lbox" class="form-button orange-butt fix">
+            <div class="price">1900 руб</div>
+            <div data-show-lbox="lbox-kup" data-product="Печать автомат Эталон" data-ix="open-lbox" class="form-button orange-butt">
                 заказать сейчас!
             </div>
         </div>
     </div>
-</div>
-<div class="tovar-cat">
-    <div class="text-block-6">
-        Штампы, факсимиле и сопутствующие товары
-    </div>
-    <div class="prod-block">
-        <div class="product">
-            <div class="img-wrap">
-                <img src="/img/xxl-e1610818687190.jpg" alt="" class="prod-img" title="XXL"></div>
-            <div class="stamp-name">
-                Штампы
-            </div>
-            <div data-delay="0" data-hover="" class="more w-dropdown">
-                <div class="more-toogle w-dropdown-toggle">
-                    <div class="more-txt">подробнее</div>
-                </div>
-                <nav class="more-block w-dropdown-list">
-                    <div class="more-desc">
-                        Более 50 видов штампов различных размеров от ведущих мировых производителей. Так же есть сразу
-                        готовые варианты штампов КОПИЯ ВЕРНА, СЕКРЕТНО, ПОЛУЧЕНО, ОПЛАЧЕНО, МЕДОСМОТР ПРОЙДЕН и т.д.
-                        Оснастки выполненные как на пластиковой основе, так и на металлической, позволяющей делать более
-                        200 оттисков в день
-                    </div>
-                </nav>
-            </div>
-            <div class="price">
-                от 500 руб.
-            </div>
-            <div data-show-lbox="lbox-kup" data-product="Штампы" data-ix="open-lbox" class="form-button orange-butt fix">
-                заказать сейчас!
-            </div>
-        </div>
-        <div class="product">
-            <div class="img-wrap">
-                <img src="/img/47f4bef73ec8f0376bf9eb95f3f3221f-1.jpg" alt="" class="prod-img" title="">
-            </div>
-            <div class="stamp-name">
-                Факсимильная подпись
-            </div>
-            <div data-delay="0" data-hover="" class="more w-dropdown">
-                <div class="more-toogle w-dropdown-toggle">
-                    <div class="more-txt">подробнее</div>
-                </div>
-                <nav class="more-block w-dropdown-list">
-                    <div class="more-desc">
-                        Факсимиле – это точное воспроизведение подписи любого человека выполненное на печати. В компании
-                        "Trafaret." работают профессиональные дизайнеры, способные отрисовать подпись любой сложности.
-                        Высококачественное оборудование нашей компании позволяет без погрешностей изготовить клише с
-                        подписью любой сложности и размера со 100% соответствием оригиналу. Любые оснастки на Ваш выбор,
-                        выполненные как на пластиковой основе, так и на металлической, позволяющей делать более 200
-                        оттисков в день
-                    </div>
-                </nav>
-            </div>
-            <div class="price">
-                от 500 руб.
-            </div>
-            <div data-show-lbox="lbox-kup" data-product="Факсимильная подпись" data-ix="open-lbox" class="form-button orange-butt fix">
-                заказать сейчас!
-            </div>
-        </div>
-        <div class="product">
-            <div class="img-wrap">
-                <img src="/img/1453711579_2_mini2.jpg" alt="" class="prod-img" title="">
-            </div>
-            <div class="stamp-name">
-                Штемпельные краски и подушки
-            </div>
-            <div data-delay="0" data-hover="" class="more w-dropdown">
-                <div class="more-toogle w-dropdown-toggle">
-                    <div class="more-txt">подробнее</div>
-                </div>
-                <nav class="more-block w-dropdown-list">
-                    <div class="more-desc">
-                        Закончилась краска в печати? Нужен индивидуальный цвет? Хотите купить настольную подушку
-                        отдельно от печати? Компания Trafaret всегда имеет в наличии большой выбор сменных подушек,
-                        краски различных цветов для любой поверхности – бумага, глянец, бетон, ткань и т.д.
-                    </div>
-                </nav>
-            </div>
-            <div class="price">
-                от 300 руб.
-            </div>
-            <div data-show-lbox="lbox-kup" data-product="Штемпельные краски и подушки" data-ix="open-lbox" class="form-button orange-butt fix">
-                заказать сейчас!
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<div class="prod-block h">
-    <div class="product">
-        <div class="img-wrap">
-            <img src="/img/58189db8322f605c2447c5de_brelok.jpg" alt="" class="prod-img"></div>
-        <div class="stamp-name">Печать <br>"Карина"</div>
-        <div data-delay="0" data-hover="1" class="more w-dropdown">
-            <div class="more-toogle w-dropdown-toggle">
-                <div class="more-txt">подробнее</div>
-            </div>
-            <nav class="more-block w-dropdown-list">
-                <div class="more-desc">Приятная на ощупь металлическая оснастка. Удобна при ношении в кармане. Перед
-                    использованием требует промакивания в штемпельную подушку.
-                </div>
-            </nav>
-        </div>
-        <div class="price">800 руб</div>
-        <div data-show-lbox="lbox-kup" data-product="Металлическая Брелок" data-ix="open-lbox" class="form-button orange-butt">
-            заказать сейчас!
-        </div>
-    </div>
-    <div class="product">
-        <div class="img-wrap">
-            <img src="/img/58189db8322f605c2447c5dd_evro1.jpg" alt="" class="prod-img">
-        </div>
-        <div class="stamp-name">Печать <br>"Евро-1"</div>
-        <div data-delay="0" data-hover="1" class="more w-dropdown">
-            <div class="more-toogle w-dropdown-toggle">
-                <div class="more-txt">подробнее</div>
-            </div>
-            <nav class="more-block w-dropdown-list">
-                <div class="more-desc">Печать с удобной рукояткой и встроенной кнопкой. Внутри имеется штемпельная
-                    подушка. Качественное гальваническое покрытие.
-                </div>
-            </nav>
-        </div>
-        <div class="price">1200 руб</div>
-        <div data-show-lbox="lbox-kup" data-product="Металлическая Евро-1" data-ix="open-lbox" class="form-button orange-butt">
-            заказать сейчас!
-        </div>
-    </div>
-    <div class="product">
-        <div class="img-wrap">
-            <img src="/img/58189db8e8bbf0826d961d74_evro2.jpg" alt="" class="prod-img">
-        </div>
-        <div class="stamp-name">Печать <br>"Евро-2"</div>
-        <div data-delay="0" data-hover="1" class="more w-dropdown">
-            <div class="more-toogle w-dropdown-toggle">
-                <div class="more-txt">подробнее</div>
-            </div>
-            <nav class="more-block w-dropdown-list">
-                <div class="more-desc">Эксклюзивная металлическая печать со встроенной подушкой внутри. Как и у всех
-                    полуавтоматов достаточно лишь перед использованием один раз нажать на кнопку сверху, снять крышку и
-                    поставить печать на бумаге. Изготавливается из сплавов цветных металлов с высококачественными
-                    гальваническими покрытиями и отличается высочайшим качеством. Радости от пользования этой печатью
-                    будет не меньше, чем от присоединения Крыма к России
-                </div>
-            </nav>
-        </div>
-        <div class="price">1300 руб</div>
-        <div data-show-lbox="lbox-kup" data-product="Металлическая Евро-2" data-ix="open-lbox" class="form-button orange-butt">
-            заказать сейчас!
-        </div>
-    </div>
-    <div class="product">
-        <div class="img-wrap">
-            <img src="/img/58189db8a49bac756d8ea873_etalon.jpg" alt="" class="prod-img"></div>
-        <div class="stamp-name">Печать <br>Автомат "Эталон"</div>
-        <div data-delay="0" data-hover="1" class="more w-dropdown">
-            <div class="more-toogle w-dropdown-toggle">
-                <div class="more-txt">подробнее</div>
-            </div>
-            <nav class="more-block w-dropdown-list">
-                <div class="more-desc">Полностью металлическая оснастка идеально подходит для «конвейерного» и
-                    беспрерывного штампования документов. «Неубиваемая» оснастка в любых руках.
-                </div>
-            </nav>
-        </div>
-        <div class="price">1900 руб</div>
-        <div data-show-lbox="lbox-kup" data-product="Печать автомат Эталон" data-ix="open-lbox" class="form-button orange-butt">
-            заказать сейчас!
-        </div>
-    </div>
-</div>
 </div>
 <div class="ottisk-block">
     <div class="dubl-row w-row">

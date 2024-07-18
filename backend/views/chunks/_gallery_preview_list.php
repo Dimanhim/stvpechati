@@ -2,7 +2,7 @@
 
 use himiklab\thumbnail\EasyThumbnailImage;
 use yii\helpers\Html;
-$class = (isset($rows) and $rows) ? 'col-md-'.$rows : 'col-md-6';
+$class = (isset($rows) and $rows) ? 'col-md-'.$rows : 'col-md-3';
 
 ?>
 
