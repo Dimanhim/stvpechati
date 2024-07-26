@@ -25,7 +25,8 @@ class Gallery extends BaseModel
     const TYPE_CATEGORY       = 1;
     const TYPE_IMAGE          = 2;
     const TYPE_PRODUCT        = 3;
-    const TYPE_ANY            = 4;
+    const TYPE_ORDER          = 4;
+    const TYPE_ANY            = 10;
 
     /**
      * {@inheritdoc}

@@ -8,15 +8,16 @@ $params = array_merge(
 
 return [
     'id' => 'app-frontend',
+    'name' => 'Trafaret',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
-        'assetManager' => [
+        /*'assetManager' => [
             'bundles' => [
                 'yii\web\YiiAsset' => false,
             ],
-        ],
+        ],*/
         'request' => [
             'csrfParam' => '_csrf-frontend',
             'baseUrl' => ''

@@ -245,4 +245,6 @@ $(document).ready(function() {
         $('#alert-confirm-btn').attr('href', href)
         $('#alertModal').modal('show')
     }
+
+    initPlugins();
 })

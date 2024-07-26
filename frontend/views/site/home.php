@@ -16,6 +16,7 @@ $this->title = 'ИЗГОТОВЛЕНИЕ ПЕЧАТЕЙ, ШТАМПОВ, ФАК�
     <div class="subhead">
         С ДОСТАВКОЙ ДО ВАШЕГО ОФИСА ИЛИ ДОМА
     </div>
+    <!--
     <div class="head-print w-clearfix">
         <div class="form-fwrapper">
             <div class="akcia">АКЦИЯ!</div>
@@ -38,6 +39,7 @@ $this->title = 'ИЗГОТОВЛЕНИЕ ПЕЧАТЕЙ, ШТАМПОВ, ФАК�
             </div>
         </div>
     </div>
+    -->
     <div>
         <div data-animation="slide" data-duration="500" data-infinite="1" class="slider w-slider">
             <div class="mask w-slider-mask">

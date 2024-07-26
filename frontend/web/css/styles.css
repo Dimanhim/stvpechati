@@ -1,0 +1,50 @@
+.pop-up-wrapp,
+.pop-up-wrapp-success
+{
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(51, 51, 51, 0.67);
+    z-index: 9999;
+    overflow: auto;
+    transition-duration: .3s;
+}
+.pop-up-wrapp-success .form-head {
+    margin-bottom: 0;
+}
+.pop-up-wrapp-success .lbox-window {
+    padding: 30px 60px;
+}
+.pop-up-wrapp.open,
+.pop-up-wrapp-success.open
+{
+    display: block;
+}
+.lbox-kup {
+    display: block;
+}
+.lbox-kup {
+    background-color: transparent;
+}
+.btn-disabled {
+    opacity: 0.5;
+}
+.info-message {
+    opacity: 0;
+    height: 20px;
+    color: #28a745;
+    margin-bottom: 0;
+    margin-top: 10px;
+    font-size: 13px;
+}
+.info-message.error {
+    opacity: 1;
+    color: #dc3545;
+}
+.info-message.success {
+    opacity: 1;
+    color: #28a745;
+}

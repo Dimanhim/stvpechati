@@ -1,10 +1,13 @@
 <?php
 
+use frontend\assets\AppAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-?>
+AppAsset::register($this);
 
+?>
+<?php $this->beginPage() ?>
 <!DOCTYPE html>
 
 <html>
@@ -20,6 +23,7 @@ use yii\helpers\Url;
             var n = c.documentElement, t = " w-mod-";
             n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
         }(window, document);</script>
+    <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <meta name='robots' content='noindex,nofollow'/>
 
@@ -40,6 +44,7 @@ use yii\helpers\Url;
     <link rel='stylesheet' id='main-css' href='/css/main.css' type='text/css' media='all'/>
     <link rel='stylesheet' id='jquery-lazyloadxt-spinner-css-css' href='/css/jquery.lazyloadxt.spinner.css' type='text/css' media='all'/>
     <link rel='stylesheet' id='a3a3_lazy_load-css' href='/css/a3_lazy_load.min.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='/css/styles.css?v=<?= mt_rand(1000,10000) ?>' type='text/css' media='all'/>
     <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js' id='jquery-core-js'></script>
     <script type='text/javascript' id='to-top-js-extra'>
         /* <![CDATA[ */
@@ -90,57 +95,17 @@ use yii\helpers\Url;
             });
         });
     </script>
+    <?php $this->head() ?>
 </head>
 <body>
+<?php $this->beginBody() ?>
 <script id="query_vars">
     var query_vars = 'a:63:{s:5:"error";s:0:"";s:1:"m";s:0:"";s:1:"p";s:1:"2";s:11:"post_parent";s:0:"";s:7:"subpost";s:0:"";s:10:"subpost_id";s:0:"";s:10:"attachment";s:0:"";s:13:"attachment_id";i:0;s:4:"name";s:0:"";s:8:"pagename";s:0:"";s:7:"page_id";s:1:"2";s:6:"second";s:0:"";s:6:"minute";s:0:"";s:4:"hour";s:0:"";s:3:"day";i:0;s:8:"monthnum";i:0;s:4:"year";i:0;s:1:"w";i:0;s:13:"category_name";s:0:"";s:3:"tag";s:0:"";s:3:"cat";s:0:"";s:6:"tag_id";s:0:"";s:6:"author";s:0:"";s:11:"author_name";s:0:"";s:4:"feed";s:0:"";s:2:"tb";s:0:"";s:5:"paged";i:0;s:8:"meta_key";s:0:"";s:10:"meta_value";s:0:"";s:7:"preview";s:0:"";s:1:"s";s:0:"";s:8:"sentence";s:0:"";s:5:"title";s:0:"";s:6:"fields";s:0:"";s:10:"menu_order";s:0:"";s:5:"embed";s:0:"";s:12:"category__in";a:0:{}s:16:"category__not_in";a:0:{}s:13:"category__and";a:0:{}s:8:"post__in";a:0:{}s:12:"post__not_in";a:0:{}s:13:"post_name__in";a:0:{}s:7:"tag__in";a:0:{}s:11:"tag__not_in";a:0:{}s:8:"tag__and";a:0:{}s:12:"tag_slug__in";a:0:{}s:13:"tag_slug__and";a:0:{}s:15:"post_parent__in";a:0:{}s:19:"post_parent__not_in";a:0:{}s:10:"author__in";a:0:{}s:14:"author__not_in";a:0:{}s:19:"ignore_sticky_posts";b:0;s:16:"suppress_filters";b:0;s:13:"cache_results";b:1;s:22:"update_post_term_cache";b:1;s:19:"lazy_load_term_meta";b:1;s:22:"update_post_meta_cache";b:1;s:9:"post_type";s:0:"";s:14:"posts_per_page";i:10;s:8:"nopaging";b:0;s:17:"comments_per_page";s:2:"50";s:13:"no_found_rows";b:0;s:5:"order";s:4:"DESC";}';
 </script>
 <div class="div-block-10">
-    <div id="lbox-kup" class="lbox-kup">
-        <div data-ix="close-lbox-kup" class="lbox-bg"></div>
-        <div class="lbox-window">
-            <div data-ix="close-lbox-kup" class="close-but">×</div>
-            <div data-param="product" class="form-head">
-                ПЕЧАТЬ СМАРТ
-            </div>
-            <div class="w-form">
-                <form id="wf-form--3" name="wf-form-" data-name="Заявка с сайта" method="post" class="form-inner">
-                    <input type="text" id="Name-7" name="Name-3" data-name="Name 3" placeholder="Ваше имя" maxlength="256" class="textfield w-input">
-                    <input type="text" id="Tel-3" name="Tel-3" data-name="Tel 3" maxlength="256" required="" placeholder="Ваш телефон" class="textfield w-input">
-                    <input type="submit" value="ЗАКАЗАТЬ" data-wait="Please wait..." class="form-button w-button">
-                </form>
-                <div class="w-form-done">
-                    <div>Thank you! Your submission has been received!</div>
-                </div>
-                <div class="w-form-fail">
-                    <div>Oops! Something went wrong while submitting the form</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="lbox-kup" class="lbox-kup-inn">
-        <div data-ix="close-lbox-kup-3" class="lbox-bg"></div>
-        <div class="lbox-window">
-            <div data-ix="close-lbox-kup-3" class="close-but">×</div>
-            <div data-param="product" class="form-head">
-                Получить Печать Бесплатно
-            </div>
-            <div id="form-inn" class="w-form">
-                <form method="post" data-name="Заказать печать бесплатно" id="inn-form" class="form-inner">
-                    <input type="text" id="Name-7" name="Name-3" data-name="Name 3" placeholder="Ваше имя" maxlength="256" class="textfield w-input">
-                    <input type="text" id="Tel-2" name="Tel-2" data-name="Tel 2" maxlength="256" required="" placeholder="Ваш телефон" class="textfield w-input">
-                    <input type="text" id="INN-2" name="INN-2" data-name="INN 2" maxlength="256" placeholder="Ваш ИНН" class="textfield w-input">
-                    <input type="submit" value="ЗАКАЗАТЬ" data-wait="Please wait..." class="form-button w-button">
-                </form>
-                <div class="w-form-done">
-                    <div>Thank you! Your submission has been received!</div>
-                </div>
-                <div class="w-form-fail">
-                    <div>Oops! Something went wrong while submitting the form</div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    <?= $this->render('_form') ?>
+
     <div class="lbox-eskizi">
         <div data-ix="close-lbox-kup-2" class="lbox-bg2 lbox-eskizi"></div>
         <div class="window">
@@ -248,7 +213,7 @@ use yii\helpers\Url;
                     Контакты
                 </a>
             </nav>
-            <div data-ix="open-lbox" data-show-lbox="lbox-kup" data-product="Обратный звонок" class="button">
+            <div data-product="Обратный звонок" class="button popup-form">
                 ОБРАТНЫЙ ЗВОНОК
             </div>
             <div class="menu-but w-nav-button">
@@ -371,48 +336,18 @@ use yii\helpers\Url;
     /* ]]> */
 </script>
 <script type='text/javascript' src='/js/jquery.lazyloadxt.extend.js' id='jquery-lazyloadxt-extend-js'></script>
-<script type='text/javascript' id='ajaxs_script-js-extra'>
-    /* <![CDATA[ */
-    var jxs = {
-        "url": "\/wp-admin\/admin-ajax.php?action=ajaxs_action&ajaxs_nonce=743ab6f136&jxs_act=",
-        "post_max_size": "52428800",
-        "upload_max_filesize": "52428800"
-    };
-    /* ]]> */
-</script>
-<script type='text/javascript' src='/js/ajaxs.min.js' id='ajaxs_script-js'></script>
-<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/inputmask.js"></script>
+<script type="text/javascript" src="/js/jquery.inputmask.js"></script>
+<script type="text/javascript" src="/js/main.js?v=<?= mt_rand(1000,10000) ?>"></script>
 <script type="text/javascript" src="/js/front.js"></script>
-<script src='https://www.google.com/recaptcha/api.js'></script>
+<script type="text/javascript" src="/js/common.js?v=<?= mt_rand(1000,10000) ?>"></script>
+
 <script id="mailer" type="text/javascript">
-    var $ = jQuery.noConflict();
-    var form_ids = [],
-        cur_id = '';
-    $('.w-form form:not([action],[data-action])').each(function () {
-        $(this).attr('action', '/').attr('method', 'post');
-        cur_id = $(this).attr('id');
-        if (cur_id === undefined) {
-            cur_id = 'form_id_' + form_ids.length;
-            $(this).attr('id', cur_id);
-        } else if (form_ids.indexOf(cur_id) !== -1) {
-            cur_id = cur_id + form_ids.length;
-            $(this).attr('id', cur_id);
-        }
-        form_ids.push(cur_id);
-        $(this).find('.g-recaptcha').attr('data-sitekey',
-            '6LfDnMkZAAAAAA26wmDFqBwA7e3BzQpzR6AUbEQt');
-    });
 
-    $('.w-form [data-name]').each(function (indx) {
-        $(this).attr('name', $(this).attr('data-name'));
-    });
-    $('textarea').focus(function () {
-        if ($(this).val().trim() === '') $(this).val('');
-    });
-    $('textarea').each(function () {
-        if ($(this).val().trim() === '') $(this).val('');
-    });
 
+/*
     jQuery(document).ready(function ($) {
 
         $('.w-form form[action = "/"]').submit(function (e) {
@@ -566,16 +501,11 @@ use yii\helpers\Url;
             });
         });
     });
-
-    function isJson(str) {
-        try {
-            JSON.parse(str);
-        } catch (e) {
-            return false;
-        }
-        return true;
-    }
+*/
 </script>
+
+<?php $this->endBody() ?>
+
 </body>
 </html>
-
+<?php $this->endPage(); ?>
