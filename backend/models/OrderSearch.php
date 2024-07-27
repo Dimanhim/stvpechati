@@ -39,12 +39,13 @@ class OrderSearch extends Order
      */
     public function search($params)
     {
-        $query = Order::findModels();
+        $query = Order::find()->where(['is', \Yii::$app->db->tablePrefix . 'orders.deleted', null])->andWhere([\Yii::$app->db->tablePrefix . 'orders.is_active' => 1]);
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => ['defaultOrder' => ['id' => SORT_DESC]],
         ]);
 
         $this->load($params);
