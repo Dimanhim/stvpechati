@@ -22,11 +22,7 @@ class AjaxController extends AjaxBaseController
 
         if(Yii::$app->request->isAjax and $model->load(Yii::$app->request->post())) {
             if(!$model->validate()) {
-                //$this->_addError('Ошибка валидации формы');
-                \Yii::$app->infoLog->add('model errors', $model->errors);
                 $this->_addModelFirstError($model);
-
-                \Yii::$app->infoLog->add('ajax errors', $this->_errors);
             }
         }
 

@@ -1,18 +1,8 @@
 const common = (function() {
 
-    let modalResultId = 'modalResult';
-    let modalResultObj = $('#' + modalResultId);
-    //let modalForm = new bootstrap.Modal(document.getElementById(modalFormId));
-    //let modalResult = new bootstrap.Modal(document.getElementById(modalResultId));
-    let modalResult = $('#' + modalResultId);
-
-    let modalResultTitleObj = modalResultObj.find('h5.modal-title-o')
-    let modalResultTextObj = modalResultObj.find('.modal-text-o')
-
     function init() {
         bind();
         initPlugins()
-        //showResultModal('пасиба', 'наши специалисты свяжутся с вами')
     }
     function bind() {
         $(document).on('click', '.popup-form', function(e) {
@@ -71,11 +61,9 @@ const common = (function() {
             type: 'POST',
             data: data,
             success: function (res) {
-                console.log('res submit', res);
                 if(res.error == 0) {
                     hideModalForm()
-                    console.log('Ваша заявка успешно отправлена', 'Наши специалисты свяжутся с Вами в ближайшее время')
-                    showResultModal('Ваша заявка успешно отправлена', 'Наши специалисты свяжутся с Вами в ближайшее время')
+                    showResultModal()
                 }
                 else {
                     hideModalForm()
@@ -109,35 +97,15 @@ const common = (function() {
         $('.pop-up-wrapp').removeClass('open')
     }
 
-    function showResultModal(messageTitle, messageText) {
+    function showResultModal() {
         $('.pop-up-wrapp-success').addClass('open')
     }
 
-    function addPreloader() {
-        setTimeout(function() {
-            $('.loader-block').addClass('loader');
-        }, 500);
-    }
-    function removePreloader() {
-        setTimeout(function() {
-            $('.loader-block').removeClass('loader');
-        }, 500)
-    }
-
-    function displaySuccessMessage(message, form) {
-        form.find('.info-message').addClass('success').text(message);
-        /*setTimeout(function() {
-            $('.info-message').text('').removeClass('error').removeClass('success');
-        }, 5000)*/
-    }
     function clearInfoMessages() {
         $('.info-message').text('').removeClass('error').removeClass('success');
     }
     function displayErrorMessage(message, form) {
         form.find('.info-message').addClass('error').text(message);
-        /*setTimeout(function() {
-            $('.info-message').text('').removeClass('error').removeClass('success');
-        }, 5000)*/
     }
 
     function initPlugins() {

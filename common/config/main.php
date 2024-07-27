@@ -16,5 +16,9 @@ return [
         'mailSender' => [
             'class' => 'common\components\MailSender',
         ],
+        'telegram' => [
+            'class' => 'common\components\TelegramSender',
+            'token' => '7487573825:AAEPPBGAkLglS1WsOENRijSI_ZDlSlupBLE'
+        ],
     ],
 ];

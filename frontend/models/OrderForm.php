@@ -17,6 +17,9 @@ class OrderForm extends Model
     public $product;
     public $utm;
 
+    /**
+     * @return array
+     */
     public function rules()
     {
         return [
@@ -30,6 +33,9 @@ class OrderForm extends Model
         ];
     }
 
+    /**
+     * @return array
+     */
     public function attributeLabels()
     {
         return [
@@ -40,6 +46,10 @@ class OrderForm extends Model
         ];
     }
 
+    /**
+     * @return bool
+     * @throws \yii\db\Exception
+     */
     public function saveData()
     {
         $model = new Order();
@@ -49,11 +59,17 @@ class OrderForm extends Model
         $model->setUtmLabels($this);
         if($model->save()) {
             $this->order = $model;
+            //$this->sendAdminEmail();
+            $this->sendTelegram();
             return true;
         }
         return false;
     }
 
+    /**
+     * @param $attribute
+     * @param $params
+     */
     public function validatePhone($attribute, $params)
     {
         if (!$this->hasErrors()) {
@@ -64,8 +80,9 @@ class OrderForm extends Model
         }
     }
 
-
-
+    /**
+     * @return bool
+     */
     public function firstError()
     {
         if($this->errors) {
@@ -74,11 +91,31 @@ class OrderForm extends Model
         }
     }
 
+    /**
+     * @return bool
+     */
     public function sendAdminEmail()
     {
+        return true;
         return $this->order ? Yii::$app->mailSender->toAdmin(MailSender::SUBJECT_ADMIN_ORDER, $this->order) : false;
     }
 
+    /**
+     * @return mixed
+     */
+    public function sendTelegram()
+    {
+        $text = "Новая заявка с сайта\n";
+        $text .= "Имя: " . $this->name . "\n";
+        $text .= "Телефон: " . $this->phone . "\n";
+        $text .= "Выбранный продукт: " . $this->product;
+
+        return Yii::$app->telegram->sendMessageToAdmins($text);
+    }
+
+    /**
+     * @return string
+     */
     public function getUtms()
     {
         $utmLabels = [];

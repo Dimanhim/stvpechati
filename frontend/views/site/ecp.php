@@ -60,8 +60,8 @@ $this->title = 'Электронная подпись (ЭЦП)';
                         <div class="price ecpt">
                             <?= $products[$i]->price ?> руб
                         </div>
-                        <div data-show-lbox="lbox-kup" data-product="<?= $products[$i]->short_name ?>" data-ix="open-lbox"
-                             class="form-button-copy orange-butt ecp">заказать
+                        <div data-product="<?= $products[$i]->short_name ?>"
+                             class="form-button-copy orange-butt ecp popup-form">заказать
                         </div>
                     </div>
                 </div>
@@ -82,8 +82,8 @@ $this->title = 'Электронная подпись (ЭЦП)';
                 <div class="price ecpt">
                     <?= $products[2]->price ?> руб
                 </div>
-                <div data-show-lbox="lbox-kup" data-product="<?= $products[2]->short_name ?>" data-ix="open-lbox"
-                     class="form-button-copy orange-butt ecp">заказать
+                <div data-product="<?= $products[2]->short_name ?>"
+                     class="form-button-copy orange-butt ecp popup-form">заказать
                 </div>
             </div>
         </div>
@@ -103,8 +103,8 @@ $this->title = 'Электронная подпись (ЭЦП)';
             нашли.</p>
         <p><strong>* Индивидуальный подход к каждому клиенту</strong></p>
     </div>
-    <div data-show-lbox="lbox-kup" data-product="Заказать ЭЦП" data-ix="open-lbox"
-         class="form-button-copy orange-butt faxi">заказать ЭЦП
+    <div data-product="Заказать ЭЦП"
+         class="form-button-copy orange-butt faxi popup-form">заказать ЭЦП
     </div>
     <div>
         <h2 class="h2-ecp">

@@ -160,7 +160,7 @@ $this->title = 'ИЗГОТОВЛЕНИЕ ПЕЧАТЕЙ, ШТАМПОВ, ФАК�
                         <div class="price">
                             <?= $productStamp->price ?>
                         </div>
-                        <div data-show-lbox="lbox-kup" data-product="<?= $productStamp->short_name ?>" data-ix="open-lbox" class="form-button orange-butt fix">
+                        <div data-product="<?= $productStamp->short_name ?>" class="form-button orange-butt fix popup-form">
                             заказать сейчас!
                         </div>
                     </div>
@@ -188,7 +188,7 @@ $this->title = 'ИЗГОТОВЛЕНИЕ ПЕЧАТЕЙ, ШТАМПОВ, ФАК�
                 </nav>
             </div>
             <div class="price">800 руб</div>
-            <div data-show-lbox="lbox-kup" data-product="Металлическая Брелок" data-ix="open-lbox" class="form-button orange-butt">
+            <div data-product="Металлическая Брелок" class="form-button orange-butt popup-form">
                 заказать сейчас!
             </div>
         </div>
@@ -208,7 +208,7 @@ $this->title = 'ИЗГОТОВЛЕНИЕ ПЕЧАТЕЙ, ШТАМПОВ, ФАК�
                 </nav>
             </div>
             <div class="price">1200 руб</div>
-            <div data-show-lbox="lbox-kup" data-product="Металлическая Евро-1" data-ix="open-lbox" class="form-button orange-butt">
+            <div data-product="Металлическая Евро-1" class="form-button orange-butt popup-form">
                 заказать сейчас!
             </div>
         </div>
@@ -231,7 +231,7 @@ $this->title = 'ИЗГОТОВЛЕНИЕ ПЕЧАТЕЙ, ШТАМПОВ, ФАК�
                 </nav>
             </div>
             <div class="price">1300 руб</div>
-            <div data-show-lbox="lbox-kup" data-product="Металлическая Евро-2" data-ix="open-lbox" class="form-button orange-butt">
+            <div data-product="Металлическая Евро-2" class="form-button orange-butt popup-form">
                 заказать сейчас!
             </div>
         </div>
@@ -250,7 +250,7 @@ $this->title = 'ИЗГОТОВЛЕНИЕ ПЕЧАТЕЙ, ШТАМПОВ, ФАК�
                 </nav>
             </div>
             <div class="price">1900 руб</div>
-            <div data-show-lbox="lbox-kup" data-product="Печать автомат Эталон" data-ix="open-lbox" class="form-button orange-butt">
+            <div data-product="Печать автомат Эталон" class="form-button orange-butt popup-form">
                 заказать сейчас!
             </div>
         </div>
@@ -302,8 +302,8 @@ $this->title = 'ИЗГОТОВЛЕНИЕ ПЕЧАТЕЙ, ШТАМПОВ, ФАК�
         </ul>
     </div>
     <div class="div-block-2">
-        <div data-show-lbox="lbox-kup" data-product="Печать по оттиску" data-ix="open-lbox"
-             class="form-button-copy orange-butt faxi">заказать печать по оттиску!
+        <div data-product="Печать по оттиску"
+             class="form-button-copy orange-butt faxi popup-form">заказать печать по оттиску!
         </div>
     </div>
     <div class="dubl-row w-row">
@@ -322,8 +322,8 @@ $this->title = 'ИЗГОТОВЛЕНИЕ ПЕЧАТЕЙ, ШТАМПОВ, ФАК�
         </div>
         <div class="column-4 w-col w-col-5">
             <div class="div-block-4"></div>
-            <div data-show-lbox="lbox-kup" data-product="Факсимиле" data-ix="open-lbox"
-                 class="form-button-copy orange-butt faxi">заказать ФАКСИМИЛЕ
+            <div data-product="Факсимиле"
+                 class="form-button-copy orange-butt faxi popup-form">заказать ФАКСИМИЛЕ
             </div>
         </div>
     </div>
