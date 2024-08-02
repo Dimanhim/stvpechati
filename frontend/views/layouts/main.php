@@ -35,6 +35,7 @@ AppAsset::register($this);
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="<?= Html::encode($this->title) ?>"/>
     <meta property="og:url" content="<?= Url::home(true) ?>"/>
+    <meta name="yandex-verification" content="2a378fe109481dac" />
 
     <!-- All in One SEO -->
 
