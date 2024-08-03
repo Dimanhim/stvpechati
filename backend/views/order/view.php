@@ -48,8 +48,27 @@ $this->params['breadcrumbs'][] = $this->title;
             'utm_content:ntext',
             'utm_term:ntext',
             'comment:ntext',
-            'send_email:boolean',
-            'send_telegram:boolean',
+            [
+                'attribute' => 'Браузер',
+                'value' => function($data) {
+                    if($data->visitor) {
+                        return $data->visitor->user_agent;
+                    }
+                }
+            ],
+            [
+                'attribute' => 'Откуда пришел',
+                'value' => function($data) {
+                    if($data->visitor) {
+                        return $data->visitor->http_referer;
+                    }
+                }
+            ],
+            //'send_email:boolean',
+            //'send_telegram:boolean',
+
+
+
             'is_active:boolean',
             'created_at:datetime',
         ],

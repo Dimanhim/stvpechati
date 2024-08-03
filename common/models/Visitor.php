@@ -27,7 +27,7 @@ class Visitor extends \common\models\BaseModel
 {
     const SESSION_KEY = 'stvp_v';
 
-    public $_session_id;
+    private $_session_id;
 
     /**
      * {@inheritdoc}
@@ -53,6 +53,9 @@ class Visitor extends \common\models\BaseModel
         return Gallery::TYPE_ANY;
     }
 
+    /**
+     *
+     */
     public function init()
     {
         $this->setSessionId();
@@ -60,6 +63,9 @@ class Visitor extends \common\models\BaseModel
         return parent::init();
     }
 
+    /**
+     * @return mixed
+     */
     public function setSessionId()
     {
         $session = Yii::$app->session;
@@ -70,6 +76,14 @@ class Visitor extends \common\models\BaseModel
         }
         $session->set(self::SESSION_KEY, mt_rand(1000000, 10000000));
         $this->setSessionId();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSessionId()
+    {
+        return $this->_session_id;
     }
 
     /**

@@ -1,6 +1,7 @@
 <?php
 return [
     'adminTelegramIds' => [1964809175, 835385380, 5043753350],
+    //'adminTelegramIds' => [1964809175],
     'adminEmail' => 'info@stvpechati.ru',
     'supportEmail' => 'support@example.com',
     'senderEmail' => 'no-reply@trafaret.ru',

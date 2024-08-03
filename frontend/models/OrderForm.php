@@ -2,6 +2,7 @@
 
 namespace frontend\models;
 
+use common\models\Visitor;
 use Yii;
 use backend\components\Helpers;
 use common\components\MailSender;
@@ -52,11 +53,13 @@ class OrderForm extends Model
      */
     public function saveData()
     {
+        $visitor = new Visitor();
         $model = new Order();
         $model->name = $this->name;
         $model->product = $this->product;
         $model->phone = Helpers::phoneFormat($this->phone);
         $model->setUtmLabels($this);
+        $model->session_id = $visitor->getSessionId();
         if($model->save()) {
             $this->order = $model;
             //$this->sendAdminEmail();

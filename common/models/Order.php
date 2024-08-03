@@ -58,7 +58,7 @@ class Order extends BaseModel
     public function rules()
     {
         return array_merge(parent::rules(), [
-            [['price', 'send_email', 'send_telegram'], 'integer'],
+            [['price', 'send_email', 'send_telegram', 'session_id'], 'integer'],
             [['utm_source', 'utm_campaign', 'utm_medium', 'utm_content', 'utm_term', 'comment'], 'string'],
             [['name', 'product', 'phone', 'email'], 'string', 'max' => 255],
         ]);
@@ -83,6 +83,7 @@ class Order extends BaseModel
             'comment' => 'Комментарий',
             'send_email' => 'Отправлен email',
             'send_telegram' => 'Отправлено в телеграм',
+            'session_id' => 'Сессия',
         ]);
     }
 
@@ -109,5 +110,13 @@ class Order extends BaseModel
                 }
             }
         }
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getVisitor()
+    {
+        return $this->hasOne(Visitor::className(), ['session_id' => 'session_id']);
     }
 }
