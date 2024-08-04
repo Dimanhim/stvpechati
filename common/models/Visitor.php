@@ -130,6 +130,9 @@ class Visitor extends \common\models\BaseModel
         if(isset($_SERVER['REMOTE_ADDR'])) $model->remote_addr = $_SERVER['REMOTE_ADDR'];
         if(isset($_SERVER['HTTP_REFERER'])) $model->http_referer = $_SERVER['HTTP_REFERER'];
         $model->get_params = json_encode($_GET);
-        return $model->save();
+        if($model->http_referer or $model->get_params) {
+            return $model->save();
+        }
+        return false;
     }
 }

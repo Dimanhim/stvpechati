@@ -30,6 +30,7 @@ use yii\grid\GridView;
             [
                 'attribute' => 'http_referer',
                 'headerOptions' => ['style' => 'max-width: 200px;'],
+                'contentOptions' => ['style' => 'max-width: 200px;'],
                 'value' => function($data) {
                     return $data->http_referer;
                 }
