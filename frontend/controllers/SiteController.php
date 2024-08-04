@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use common\models\Category;
+use common\models\Page;
 use common\models\Product;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
@@ -18,6 +19,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use common\models\Visitor;
+use yii\web\Response;
 
 /**
  * Site controller
@@ -79,6 +81,50 @@ class SiteController extends Controller
     public function actionRegistration()
     {
         return $this->render('registration');
+    }
+
+    /**
+ * @return string
+ */
+    public function actionSitemap() {
+        $urls = [];
+
+        $urls[] = [
+            'loc' => '/',
+            'lastmod' => date( DATE_W3C, strtotime('04.08.2017 14:30:56')),
+            'changefreq' => 'daily',
+            'priority' => 1,
+        ];
+
+        $urls[] = [
+            'loc' => '/ecp',
+            'lastmod' => date( DATE_W3C, strtotime('04.08.2017 15:32:14')),
+            'changefreq' => 'daily',
+            'priority' => 1,
+        ];
+
+        $urls[] = [
+            'loc' => '/registration',
+            'lastmod' => date( DATE_W3C, strtotime('04.08.2017 16:12:25')),
+            'changefreq' => 'daily',
+            'priority' => 0.9,
+        ];
+
+        $urls[] = [
+            'loc' => '/politics',
+            'lastmod' => date( DATE_W3C, strtotime('04.08.2017 16:34:35')),
+            'changefreq' => 'daily',
+            'priority' => 0.5,
+        ];
+
+        Yii::$app->response->format = Response::FORMAT_RAW;
+        $headers = Yii::$app->response->headers;
+        $headers->add('Content-Type', 'text/xml');
+
+        return $this->renderPartial('sitemap', [
+            'host' => Yii::$app->request->hostInfo,
+            'urls' => $urls,
+        ]);
     }
 
 

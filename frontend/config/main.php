@@ -63,6 +63,8 @@ return [
                 '/ecp' => 'site/ecp',
                 '/registration' => 'site/registration',
                 '/politics' => 'site/politics',
+                '/sitemap' => 'site/sitemap',
+                '/sitemap.xml' => 'site/sitemap',
             ],
         ],
     ],
