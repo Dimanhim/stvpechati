@@ -123,6 +123,7 @@ class Visitor extends \common\models\BaseModel
     public function create()
     {
         if( !$this->_session_id or self::find()->where(['session_id' => $this->_session_id])->exists()) return false;
+        if(self::find()->where(['remote_addr' => $_SERVER['REMOTE_ADDR']])->exists()) return false;
 
         $model = new self();
         $model->session_id = $this->_session_id;
