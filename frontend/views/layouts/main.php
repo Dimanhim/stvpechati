@@ -227,6 +227,10 @@ AppAsset::register($this);
     </div>
 </div>
 
+<div class="main-screen">
+    <iframe src="https://yandex.ru/sprav/widget/rating-badge/1735916078?type=rating" width="150" height="50" frameborder="0"></iframe>
+</div>
+
 <?= $content ?>
 
 <div id="kontakta" class="footer">
