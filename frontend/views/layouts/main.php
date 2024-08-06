@@ -25,10 +25,8 @@ AppAsset::register($this);
         }(window, document);</script>
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-    <meta name='robots' content='noindex,nofollow'/>
 
     <!-- All in One SEO 4.6.6 - aioseo.com -->
-    <meta name="robots" content="noindex, nofollow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
     <link rel="canonical" href="<?= Url::home(true) ?>"/>
     <meta property="og:locale" content="ru_RU"/>
     <meta property="og:site_name" content="<?= Html::encode($this->title) ?> |"/>
